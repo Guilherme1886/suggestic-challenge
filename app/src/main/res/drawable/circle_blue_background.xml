@@ -6,6 +6,6 @@
         android:width="80dp"
         android:height="80dp" />
 
-    <solid android:color="@color/blue" />
+    <solid android:color="@color/colorBackgroundCircle" />
 
 </shape>
