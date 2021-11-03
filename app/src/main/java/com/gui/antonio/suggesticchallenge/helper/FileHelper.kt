@@ -1,4 +1,4 @@
-package com.gui.antonio.suggesticchallenge
+package com.gui.antonio.suggesticchallenge.helper
 
 import android.content.Context
 import java.io.IOException

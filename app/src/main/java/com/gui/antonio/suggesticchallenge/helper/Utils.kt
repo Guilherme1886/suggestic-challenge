@@ -1,0 +1,36 @@
+package com.gui.antonio.suggesticchallenge.helper
+
+fun Int.descriptionFromDay(): String {
+    return when (this) {
+        0 -> "ZERO"
+        1 -> "ONE"
+        2 -> "TWO"
+        3 -> "THREE"
+        4 -> "FOUR"
+        5 -> "FIVE"
+        6 -> "SIX"
+        7 -> "SEVEN"
+        8 -> "EIGHT"
+        9 -> "NINE"
+        10 -> "TEN"
+        11 -> "ELEVEN"
+        12 -> "TWELVE"
+        13 -> "THIRTEEN"
+        14 -> "FOURTEEN"
+        15 -> "FIFTEEN"
+        16 -> "SIXTEEN"
+        17 -> "SEVENTEEN"
+        18 -> "EIGHTEEN"
+        19 -> "NINETEEN"
+        20 -> "TWENTY"
+        21 -> "TWENTY ONE"
+        22 -> "TWENTY TWO"
+        23 -> "TWENTY THREE"
+        24 -> "TWENTY FOUR"
+        25 -> "TWENTY FIVE"
+        26 -> "TWENTY SIX"
+        27 -> "TWENTY SEVEN"
+        28 -> "TWENTY EIGHTEEN"
+        else -> ""
+    }
+}

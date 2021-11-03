@@ -1,4 +1,4 @@
-package com.gui.antonio.suggesticchallenge
+package com.gui.antonio.suggesticchallenge.data.model
 
 data class DayModel(
     val title: String,

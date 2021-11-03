@@ -1,8 +1,10 @@
-package com.gui.antonio.suggesticchallenge
+package com.gui.antonio.suggesticchallenge.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.gui.antonio.suggesticchallenge.data.model.DayModel
+import com.gui.antonio.suggesticchallenge.domain.GetDaysUseCase
 
 class MainViewModel(
     private val getDaysUseCase: GetDaysUseCase
