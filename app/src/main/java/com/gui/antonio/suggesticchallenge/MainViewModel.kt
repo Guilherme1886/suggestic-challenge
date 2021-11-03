@@ -12,7 +12,6 @@ class MainViewModel(
     val getDaysLiveData: LiveData<List<DayModel>> = _getDaysLiveData
 
     fun getDays() {
-        getDaysUseCase.getDays()
-        _getDaysLiveData.value = null
+        _getDaysLiveData.value = getDaysUseCase.getDays()
     }
 }
