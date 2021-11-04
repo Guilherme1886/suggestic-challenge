@@ -12,10 +12,8 @@ class GetDaysUseCase(
 ) {
     fun getDays(): List<DayModel> {
         return try {
-            gson.fromJson(
-                repository.getDays(),
-                object : TypeToken<List<DayModel>>() {}.type
-            ) as List<DayModel>
+            val json = repository.getDays() ?: String()
+            gson.fromJson(json, object : TypeToken<List<DayModel>>() {}.type) as List<DayModel>
         } catch (j: JsonSyntaxException) {
             emptyList()
         }

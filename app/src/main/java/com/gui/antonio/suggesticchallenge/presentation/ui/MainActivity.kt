@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createViewModel() {
-        mainViewModel = ViewModelProvider(this, MainViewModelFactory(this)).get(MainViewModel::class.java)
+        mainViewModel = ViewModelProvider(this, MainViewModelFactory(this))[MainViewModel::class.java]
     }
 
     private fun setBinding() {
@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setObservers() {
         mainViewModel.getDaysLiveData.observe(this) {
+//            binding.progressIndicator.hide()
             mainAdapter.updateData(it)
         }
     }
