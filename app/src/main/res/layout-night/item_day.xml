@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/circle_blue_background"
         android:gravity="center_vertical|center_horizontal"
-        android:textColor="@color/white"
+        android:textColor="@color/purple_200"
         android:textSize="@dimen/dimen34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
