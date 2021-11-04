@@ -38,19 +38,19 @@ android {
     }
     flavorDimensions "dimensions"
     productFlavors {
-        classic {
-            applicationIdSuffix ".classic"
+        free {
+            applicationIdSuffix ".free"
         }
-        premium {
-            applicationIdSuffix ".premium"
+        pro {
+            applicationIdSuffix ".pro"
         }
     }
     sourceSets {
-        classic {
-            res.srcDir("src/classic/res")
+        free {
+            res.srcDir("src/free/res")
         }
-        premium {
-            res.srcDir("src/premium/res")
+        pro {
+            res.srcDir("src/pro/res")
         }
     }
 }
