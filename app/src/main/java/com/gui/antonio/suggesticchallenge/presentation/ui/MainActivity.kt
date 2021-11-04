@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.gui.antonio.suggesticchallenge.R
+import com.gui.antonio.suggesticchallenge.data.model.DayModel
 import com.gui.antonio.suggesticchallenge.databinding.ActivityMainBinding
 import com.gui.antonio.suggesticchallenge.presentation.adapter.MainAdapter
 import com.gui.antonio.suggesticchallenge.presentation.viewmodel.MainViewModel
@@ -13,14 +15,8 @@ import com.gui.antonio.suggesticchallenge.presentation.viewmodel.factory.MainVie
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val mainAdapter: MainAdapter by lazy {
-        MainAdapter {
-            val alert = AlertDialog.Builder(this)
-            alert.setTitle(it.title)
-            alert.setMessage(it.subtitle)
-            alert.setPositiveButton("OK", null)
-            alert.show()
-        }
+    private val mainAdapter: MainAdapter by lazy { MainAdapter {
+        showAlert(it) }
     }
     private lateinit var mainViewModel: MainViewModel
 
@@ -39,7 +35,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createViewModel() {
-        mainViewModel = ViewModelProvider(this, MainViewModelFactory(this))[MainViewModel::class.java]
+        mainViewModel =
+            ViewModelProvider(this, MainViewModelFactory(this))[MainViewModel::class.java]
     }
 
     private fun setBinding() {
@@ -48,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setObservers() {
         mainViewModel.getDaysLiveData.observe(this) {
-//            binding.progressIndicator.hide()
+            binding.progressIndicator.hide()
             mainAdapter.updateData(it)
         }
     }
@@ -62,6 +59,15 @@ class MainActivity : AppCompatActivity() {
                     DividerItemDecoration.VERTICAL
                 )
             )
+        }
+    }
+
+    private fun showAlert(dayModel: DayModel) {
+        AlertDialog.Builder(this).apply {
+            setTitle(dayModel.title)
+            setMessage(dayModel.subtitle)
+            setPositiveButton(getString(R.string.ok), null)
+            show()
         }
     }
 

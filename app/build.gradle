@@ -47,7 +47,7 @@ android {
     }
     sourceSets {
         classic {
-            res.srcDir("src/main/res")
+            res.srcDir("src/classic/res")
         }
         premium {
             res.srcDir("src/premium/res")
